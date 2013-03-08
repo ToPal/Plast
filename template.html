@@ -1,0 +1,72 @@
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title>Programming languages popularity index</title>
+</head>
+<body>
+
+	<script>
+		window.onkeypress = pressed;
+
+		function pressed(e) 
+		{
+			var len = chak_str.length;
+			if (chak_need_a_string.charAt(len) == String.fromCharCode(e.charCode)) {
+				chak_str += String.fromCharCode(e.charCode);
+			} else {
+				chak_str = "";
+			}
+			if (chak_str == chak_need_a_string) {
+				document.getElementById('chak').style.display = 'block';
+			}
+		}
+		var chak_str = "";
+		var chak_need_a_string = "УЧННР";
+	</script>
+	<h1 align = "center">Programming languages popularity index</h1>
+	<br>
+	<center id = "chak" style = "display: none;"><img src = "chak.jpg" align = "center"></center>
+	<br>
+	<h2 align = "center">Top 10 popular languages in Russia</h2>
+	<table align = "center" style = "border-spacing: 10px 3px">
+		<tr style = "text-decoration: underline; color: #666;">
+			<td>№</td>
+			<td>Language name</td>
+			<td>Popularity index</td>
+		</tr>
+
+#top10_russian_table#
+
+	</table>
+        <br><br>
+        <p style = "text-align: right;"><a href = "mailto:admin@proglang.ru" style = "color: #444;">admin@proglang.ru</a></p>
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+(function (d, w, c) {
+    (w[c] = w[c] || []).push(function() {
+        try {
+            w.yaCounter19994149 = new Ya.Metrika({id:19994149,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true});
+        } catch(e) { }
+    });
+
+    var n = d.getElementsByTagName("script")[0],
+        s = d.createElement("script"),
+        f = function () { n.parentNode.insertBefore(s, n); };
+    s.type = "text/javascript";
+    s.async = true;
+    s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+    if (w.opera == "[object Opera]") {
+        d.addEventListener("DOMContentLoaded", f, false);
+    } else { f(); }
+})(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="//mc.yandex.ru/watch/19994149" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+</body>
+</html>

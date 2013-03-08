@@ -1,0 +1,220 @@
+1С
+(Visual) Basic
+(Visual) FoxPro
+4th Dimension/4D
+ABAP
+ABC
+ActionScript
+Ada
+Agilent VEE
+Algol
+Alice
+Angelscript
+Apex
+APL
+AppleScript
+Arc
+AspectJ
+Assembly
+ATLAS
+AutoIt
+AutoLISP
+Automator
+Avenue
+Awk
+Bash
+bc
+BCPL
+BETA
+BlitzMax
+Boo
+Bourne Shell
+C
+C Shell
+C#
+C++
+C++/CLI
+C-Omega
+Caml
+CFML
+cg
+Ch
+CHILL
+CIL
+CL (OS/400)
+Clarion
+Clean
+Clipper
+Clojure
+CLU
+COBOL
+Cobra
+CoffeeScript
+COMAL
+Common Lisp
+cT
+Curl
+Dart
+DCL
+Delphi
+DiBOL
+Dylan
+ECMAScript
+EGL
+Eiffel
+Emacs Lisp
+Erlang
+Etoys
+Euphoria
+EXEC
+F#
+Factor
+Falcon
+Fantom
+Felix
+Forth
+Fortran
+Fortress
+Gambas
+GNU Octave
+Go
+Gosu
+Groovy
+Haskell
+Haxe
+Heron
+HPL
+HyperTalk
+Icon
+IDL
+Inform
+Informix-4GL
+INTERCAL
+Io
+Ioke
+J#
+JADE
+Java
+Java FX Script
+JavaScript
+JScript
+JScript.NET
+Korn Shell
+LabVIEW
+Ladder Logic
+Lasso
+Limbo
+Lingo
+Lisp
+Logo
+LotusScript
+LPC
+Lua
+Lustre
+M4
+MAD
+Magic
+Magik
+Malbolge
+MANTIS
+Maple
+Mathematica
+MATLAB
+Max/MSP
+MAXScript
+MEL
+Mercury
+Miva
+ML
+Monkey
+Modula-2
+Modula-3
+MOO
+Moto
+MS-DOS Batch
+MUMPS
+NATURAL
+Nemerle
+NQC
+NSIS
+NXT-G
+Oberon
+Object Rexx
+Objective-C
+OCaml
+Occam
+OpenCL
+OpenEdge ABL
+OPL
+Oz
+Paradox
+Pascal
+Perl
+PHP
+Pike
+PILOT
+PL/I
+PL/SQL
+Pliant
+PostScript
+POV-Ray
+PowerBasic
+PowerScript
+PowerShell
+Processing
+Prolog
+Pure Data
+Python
+Racket
+REALBasic
+REBOL
+Revolution
+REXX
+RPG (OS/400)
+Ruby
+Rust
+S-PLUS
+SAS
+Sather
+Scala
+Scheme
+Scratch
+sed
+Seed7
+SIGNAL
+Simula
+Simulink
+Slate
+Smalltalk
+Smarty
+SPARK
+SPSS
+SQR
+Squeak
+Squirrel
+Standard ML
+Suneido
+SuperCollider
+TACL
+Tcl
+Tex
+thinBasic
+TOM
+Transact-SQL
+TypeScript
+Vala/Genie
+VBScript
+Verilog
+VHDL
+Visual Basic .NET
+WebDNA
+Whitespace
+X10
+xBase
+XBase++
+Xen
+XPL
+XSLT
+yacc
+Yorick
+Z shell
