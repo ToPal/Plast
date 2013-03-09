@@ -21,8 +21,6 @@ public class HeadHunter {
         
         for (String lang: langs) {
             try {
-                String file_text = "";
-                String file_name = "langs\\" + lang + ".txt";
                 int vac_count = 0;
                 String html = "";
                 
@@ -39,12 +37,10 @@ public class HeadHunter {
                 }
                 
                 lang = URLEncoder.encode(lang); //декодируем пробелы и русские символы
-                lang = "!" + lang; //запрещаем искать синонимы
+                lang = "!" + lang;              //запрещаем искать синонимы
                 String url = String.format(addr_template, lang);
-                file_text = url;
                 
                 html = Utils.get_html(url);
-                file_text += "\n\n\n\n" + html;
                 
                 if (html.indexOf("resumesearch__result") <= 0) {
                     vac_count = -1;
@@ -61,9 +57,6 @@ public class HeadHunter {
                     }
                     
                 }
-                
-                file_text = vac_count + "\n\n\n\n" + file_text;
-                Utils.save_file(file_name, file_text);
                 
                 res.add(vac_count);
                 

@@ -27,6 +27,11 @@ import org.apache.commons.net.ftp.*;
  */
 public class Utils {
     
+    final static String FTP_AUTH_FILE = "..\\ftp_auth.txt";
+    static String FTP_ADDRESS = "deli.beget.ru";
+    static String FTP_LOGIN   = "";
+    static String FTP_PASS    = "";
+    
     static Vector<String> get_lines_from_file(String fileName) {
         Vector<String> res = new Vector<>();
         try {
@@ -69,6 +74,35 @@ public class Utils {
             }
             file.close();
         } catch (Exception e) {};
+    }
+    
+    static Boolean update_ftp_auth_data() {
+        FTP_LOGIN = "";
+        FTP_PASS  = "";
+        
+        try {
+            
+            Vector<String> data = get_lines_from_file(FTP_AUTH_FILE);
+            if ((data.size() >= 2) && (!data.get(0).isEmpty()) && (!data.get(1).isEmpty())) {
+                FTP_LOGIN = data.get(0);
+                FTP_PASS  = data.get(1);
+            } else {
+                
+                FTPAuth auth_form = new FTPAuth();
+                auth_form.setVisible(true);
+                while (auth_form != null && auth_form.isVisible()) {
+                    Thread.sleep(1);
+                }
+                if (FTP_LOGIN.isEmpty() || FTP_PASS.isEmpty()) {
+                    return false;
+                }
+                
+            }
+            return true;
+            
+        } catch (Exception e) {
+            return false;
+        }
     }
 
     static String get_html(String url) {
@@ -128,14 +162,18 @@ public class Utils {
     }
     
     static void save_to_ftp(String remoteFile, String localFile) {
+        if (!update_ftp_auth_data()) {
+            return;
+        }
+        
         FTPClient ftp = new FTPClient();
         FileInputStream fis = null;
         FTPClientConfig config = new FTPClientConfig();
         ftp.configure(config);
         try {
           int reply;
-          ftp.connect("deli.beget.ru");
-          ftp.login("", "");
+          ftp.connect(FTP_ADDRESS);
+          ftp.login(FTP_LOGIN, FTP_PASS);
           reply = ftp.getReplyCode();
           if(!FTPReply.isPositiveCompletion(reply)) {
             ftp.disconnect();
@@ -181,9 +219,11 @@ public class Utils {
         for (int i = 0; i < N; i++) {
             String per = String.format("%2.1f%%", (new Float(sorted.get(i).sum)*100/el_sum));
             injection += "  <tr>" + "\n";
-                injection += "      <td align = \"center\">" + (i+1) + "</td>" + "\n";
-                injection += "      <td>" + sorted.get(i).lang + "</td>" + "\n";
-                injection += "      <td align = \"center\">" + per + "</td>" + "\n";
+                injection += String.format(
+                        "      <td align = \"center\">%d</td>\n" +
+                        "      <td>%s</td>\n" + 
+                        "      <td align = \"center\">%s</td>\n",
+                        (i+1), sorted.get(i).lang, per);
             injection += "  </tr>" + "\n";
         }
         

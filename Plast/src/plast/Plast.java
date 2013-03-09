@@ -15,31 +15,39 @@ import java.util.Vector;
  * @author PASHA
  */
 public class Plast {
+    final static String RESULT_DIR = "..\\res";
+    final static String TEMP_DIR = "..\\templates";
+    final static String WEB_PAGE_TEMPLATE = TEMP_DIR + "\\" + "template.html";
+    final static String WEB_PAGE_TEMP     = TEMP_DIR + "\\" + "index.html";
+    final static String LANGS_FILE        = TEMP_DIR + "\\" + "langs.txt";
     
-    final static String temp_wp = "D:\\Plast\\index.html";
+    final static String REMOTE_WEB_PAGE   = "index.htm";
+    final static String REMOTE_RESULT_DIR = "history";
+    
+    
     
     static Vector<String> get_lang_names() {
-        return Utils.get_lines_from_file("D:\\Plast\\langs.txt");
+        return Utils.get_lines_from_file(LANGS_FILE);
     }
     
     static void save_web_page(String wp) {
-        Utils.save_file(temp_wp, wp);
+        Utils.save_file(WEB_PAGE_TEMP, wp);
     }
     
     static String get_template() {
-        return Utils.get_file_text("D:\\Plast\\template.html");
+        return Utils.get_file_text(WEB_PAGE_TEMPLATE);
     }
     
     static void save_result(Vector<Integer> sum) {
         String fileName = Utils.get_today_str();
         String text = Utils.ints_to_str(sum);
-        Utils.save_file("D:\\Plast\\res\\" + fileName, text);
+        Utils.save_file(RESULT_DIR + "\\" + fileName, text);
     }
     
     static void save_ftp() {
-        Utils.save_to_ftp("index.htm", temp_wp);
+        Utils.save_to_ftp(REMOTE_WEB_PAGE, WEB_PAGE_TEMP);
         String fileName = Utils.get_today_str();
-        Utils.save_to_ftp("history/" + fileName, "D:\\Plast\\res\\" + fileName);
+        Utils.save_to_ftp(REMOTE_RESULT_DIR + "/" + fileName, RESULT_DIR + "\\" + fileName);
     }
     
 
